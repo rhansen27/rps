@@ -16,10 +16,10 @@ let computerChoice = "";
 let playAgain = "";
 
 while (isRunning === true) {
-  computerChoice = choices[Math.floor(Math.random() * 3)];
+  computerChoice = choices[Math.floor(Math.random() * 4)];
   humanChoice = prompt("Enter rock, paper, or scissors: ");
-  humanChoice.toUpperCase();
-  computerChoice.toUpperCase();
+  humanChoice = humanChoice.toUpperCase();
+  computerChoice = computerChoice.toUpperCase();
   if (humanChoice === computerChoice) {
     window.alert(
       `It's a tie! You chose ${humanChoice} and the computer chose ${computerChoice}. The current score is Human: ${humanScore} Computer: ${computerScore}`
@@ -46,8 +46,9 @@ while (isRunning === true) {
     window.alert("Invalid input. Please try again.");
   }
   playAgain = prompt("Do you want to play again? (yes or no)");
-  playAgain.toUpperCase();
+  playAgain = playAgain.toUpperCase();
   if (playAgain === "NO") {
     isRunning = false;
+    break;
   }
 }
